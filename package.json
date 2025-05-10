@@ -1,0 +1,27 @@
+{
+  "name": "1p-ultra",
+  "version": "1.0.0",
+  "description": "Promptify Ultra Scalable AI Agent Framework",
+  "main": "promptify/index.js",
+  "scripts": {
+    "init": "node promptify/init.js",
+    "start": "node promptify/run.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "promptify",
+    "AI",
+    "agent",
+    "LLM",
+    "framework",
+    "token-optimization"
+  ],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1"
+  }
+} 

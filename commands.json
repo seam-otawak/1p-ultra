@@ -1,0 +1,14 @@
+{
+  "commands": [
+    {
+      "name": "promptify:run",
+      "script": "node ${workspaceFolder}/.cursor/promptify/run.js",
+      "description": "Run a Promptify agent task"
+    },
+    {
+      "name": "promptify:init",
+      "script": "node ${workspaceFolder}/.cursor/promptify/init.js",
+      "description": "Initialize Promptify framework"
+    }
+  ]
+} 

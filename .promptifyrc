@@ -1,0 +1,42 @@
+{
+  "verbose": false,
+  "strategyDirector": {
+    "tokenBudget": 17500,
+    "maxConcurrent": 3
+  },
+  "domains": [
+    {
+      "name": "ui",
+      "tokenBudget": 6800,
+      "helpers": [
+        {
+          "specialization": "ui",
+          "tokenBudget": 2000,
+          "maxConcurrent": 5
+        }
+      ]
+    },
+    {
+      "name": "dev",
+      "tokenBudget": 6800,
+      "helpers": [
+        {
+          "specialization": "code",
+          "tokenBudget": 2000,
+          "maxConcurrent": 5
+        }
+      ]
+    },
+    {
+      "name": "ops",
+      "tokenBudget": 6800,
+      "helpers": [
+        {
+          "specialization": "general",
+          "tokenBudget": 2000,
+          "maxConcurrent": 3
+        }
+      ]
+    }
+  ]
+} 

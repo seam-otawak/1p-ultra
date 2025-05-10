@@ -1,0 +1,23 @@
+[
+  {
+    "id": "strategy",
+    "content": "Strategy Director: Senior agent responsible for high-level planning, cross-domain coordination, and strategic decision-making. Delegates to domain coordinators.",
+    "tags": ["agent", "level:1", "type:agent"],
+    "relations": [{"type": "implements", "target": "G1"}],
+    "tokenBudget": 17500
+  },
+  {
+    "id": "domain",
+    "content": "Domain Coordinator: Mid-level agent responsible for coordinating activities within a specific domain. Delegates to helper agents and reports to strategy directors.",
+    "tags": ["agent", "level:1", "type:agent"],
+    "relations": [{"type": "implements", "target": "G1"}],
+    "tokenBudget": 6800
+  },
+  {
+    "id": "helper",
+    "content": "Helper Agent: Junior agent responsible for specialized tasks within a domain. Reports to domain coordinators.",
+    "tags": ["agent", "level:1", "type:agent"],
+    "relations": [{"type": "implements", "target": "G1"}],
+    "tokenBudget": 2000
+  }
+] 

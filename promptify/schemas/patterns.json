@@ -1,0 +1,56 @@
+[
+  {
+    "id": "G1",
+    "content": "AgentHierarchy: Structured agent classification with Strategy Director, Domain Coordinator, and Helper roles, each with specific responsibilities and token budgets.",
+    "tags": ["pattern", "level:1", "type:governance"],
+    "relations": [{"type": "requires", "target": "G2"}]
+  },
+  {
+    "id": "G2",
+    "content": "ContextWindow: System for managing token usage through progressive loading, hierarchical compression, and lazy evaluation to maximize information density.",
+    "tags": ["pattern", "level:1", "type:governance"],
+    "relations": [{"type": "implements", "target": "G3"}]
+  },
+  {
+    "id": "G3",
+    "content": "TokenBudget: Strict token allocation rules for each agent type that govern operational constraints and context loading behavior.",
+    "tags": ["pattern", "level:1", "type:governance"],
+    "relations": []
+  },
+  {
+    "id": "D1",
+    "content": "InformationDensity: Compression technique using symbolic notation, hierarchical structures, and pattern references to maximize fact-to-token ratio.",
+    "tags": ["pattern", "level:1", "type:format", "domain:ui"],
+    "relations": []
+  },
+  {
+    "id": "D2",
+    "content": "KnowledgeMesh: Graph-based knowledge representation where atoms of information are connected by typed relationships for efficient retrieval.",
+    "tags": ["pattern", "level:2", "type:architecture"],
+    "relations": []
+  },
+  {
+    "id": "D3",
+    "content": "EventStream: Asynchronous communication protocol for inter-agent coordination using pub-sub pattern with structured event payloads.",
+    "tags": ["pattern", "level:2", "type:architecture"],
+    "relations": []
+  },
+  {
+    "id": "T1",
+    "content": "ProgressiveLoading: Technique for loading context in stages with L1 (critical), L2 (supporting), and L3 (background) layers based on task complexity.",
+    "tags": ["pattern", "level:1", "type:technique", "domain:dev"],
+    "relations": []
+  },
+  {
+    "id": "T2",
+    "content": "PatternVectorEncoding: System for referencing and composing patterns using compact notation and symbolic relationships.",
+    "tags": ["pattern", "level:1", "type:technique"],
+    "relations": []
+  },
+  {
+    "id": "T3",
+    "content": "MicroagentArchitecture: Design pattern using ultra-specialized, single-purpose agents with fixed context size for maximum scalability.",
+    "tags": ["pattern", "level:2", "type:architecture", "domain:ops"],
+    "relations": []
+  }
+] 

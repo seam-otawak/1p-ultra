@@ -1,0 +1,20 @@
+[
+  {
+    "id": "ui",
+    "content": "UI/UX Domain: Focused on user interface design, interaction patterns, and visual design. Handles tasks related to frontend implementations, design systems, and user experience flows.",
+    "tags": ["domain", "level:1", "type:domain"],
+    "relations": [{"type": "uses", "target": "D1"}]
+  },
+  {
+    "id": "dev",
+    "content": "Development Domain: Focused on coding, engineering, and software architecture. Handles tasks related to code generation, refactoring, optimization, and technical implementations.",
+    "tags": ["domain", "level:1", "type:domain"],
+    "relations": [{"type": "uses", "target": "T1"}]
+  },
+  {
+    "id": "ops",
+    "content": "Operations Domain: Focused on infrastructure, deployment, and system operations. Handles tasks related to CI/CD, containerization, monitoring, and operational concerns.",
+    "tags": ["domain", "level:1", "type:domain"],
+    "relations": [{"type": "uses", "target": "T3"}]
+  }
+] 
