@@ -653,20 +653,22 @@ class ContextCompiler{constructor(){this.compressionEnabled=true;this.maxContext
 ### §2 §1 §0 File Structure @FileStruct
 
 ```
-.cursor/
-├── promptify/
-│   ├── puma.js             # Core single-file implementation
-│   ├── extensions/
-│   │   ├── openai.js       # OpenAI API integration
-│   │   ├── anthropic.js    # Anthropic API integration
-│   │   └── embedding.js    # Embedding providers integration
-│   ├── templates/
-│   │   ├── code.js         # Code generation templates
-│   │   ├── analysis.js     # Analysis task templates
-│   │   └── general.js      # General templates
-│   ├── config.js           # Optional configuration
-│   └── index.js            # Entry point
-└── .pumarc                 # Configuration file
+promptify-ultra/
+├── .cursor/          # Cursor IDE configuration
+├── promptify/        # Core framework implementation
+│   ├── agents/       # Agent implementation
+│   ├── core/         # Core utilities and logic
+│   ├── schemas/      # Data schema definitions
+│   ├── init.js       # Initialization script
+│   ├── run.js        # Command runner script
+│   └── index.js      # Main entry point
+├── .gitignore        # Git ignore file
+├── .promptifyrc      # Configuration file
+├── commands.json     # Command definitions
+├── package.json      # Node.js package configuration
+├── package-lock.json # Dependency lock file
+├── README.md         # Project overview
+└── promptify-docs.md # Detailed documentation
 ```
 
 ### §2 §1 §0 Core PUMA Implementation @PUMAImpl
@@ -926,8 +928,6 @@ Create `.cursor/promptify/add-doc.js`:
 
 ```javascript
 const fs=require('fs');const path=require('path');const{puma}=require('./promptify');const readline=require('readline');const rl=readline.createInterface({input:process.stdin,output:process.stdout});async function addDocument(){await puma.initialize();rl.question('Enter file path to add (or paste content directly): ',async(input)=>{try{let content='';let metadata={};if(fs.existsSync(input)){content=fs.readFileSync(input,'utf8');const ext=path.extname(input).slice(1);metadata={source:input,type:ext};console.log(`Read ${content.length} characters from ${input}`);}else{content=input;metadata={source:'direct',type:'text'};}if(content.length<10){console.log('Content too short');return finish();}rl.question('Enter metadata as JSON (or press Enter for default): ',async(metaInput)=>{if(metaInput.trim()){try{const userMeta=JSON.parse(metaInput);metadata={...metadata,...userMeta};}catch(e){console.log('Invalid JSON, using default metadata');}}// Chunk content if neededconst chunks=content.length>1000?chunkContent(content):([content]);console.log(`Adding ${chunks.length} chunks to knowledge store...`);for(const[i,chunk]of chunks.entries()){const chunkMeta={...metadata,chunk:i+1,totalChunks:chunks.length};const docId=await puma.addDocument(chunk,chunkMeta);console.log(`Added document chunk ${i+1}/${chunks.length}, id: ${docId}`);}finish();});}catch(e){console.error('Error:',e.message);finish();}});function finish(){console.log('Knowledge store updated');process.exit(0);}function chunkContent(text,maxChars=1000){const sentences=text.split(/(?<=[.!?])\s+/);const chunks=[];let currentChunk='';for(const sentence of sentences){if(currentChunk.length+sentence.length>maxChars){chunks.push(currentChunk);currentChunk=sentence;}else{currentChunk+=currentChunk?` ${sentence}`:sentence;}}if(currentChunk)chunks.push(currentChunk);return chunks;}}addDocument();
-```
-
 ```
 
 ## §1 §0 Template Setup

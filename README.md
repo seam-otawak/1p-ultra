@@ -23,7 +23,7 @@ Promptify Ultra is an advanced framework designed for maximum efficiency and sca
 ## Installation
 
 ```bash
-# Clone the repository (if not using with Cursor)
+# Clone the repository
 git clone https://github.com/your-username/promptify-ultra.git
 cd promptify-ultra
 
@@ -32,6 +32,20 @@ npm install
 
 # Initialize the framework
 npm run init
+```
+
+## Project Structure
+
+```
+promptify-ultra/
+├── .cursor/          # Cursor IDE configuration
+├── promptify/        # Core framework implementation
+│   ├── agents/       # Agent implementation
+│   ├── core/         # Core utilities and logic
+│   └── schemas/      # Data schema definitions
+├── .promptifyrc      # Configuration file
+├── commands.json     # Command definitions
+└── promptify-docs.md # Detailed documentation
 ```
 
 ## Quick Start
